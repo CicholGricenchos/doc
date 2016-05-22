@@ -1,3 +1,59 @@
 // Place all the styles related to the Documents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.document-content {
+	width: 70%;
+	float: left;
+	box-sizing: border-box;
+	padding: 1em;
+
+	.edit-button {
+		display: block;
+		float: right;
+		margin: 25px;
+		font-size: 1.7em;
+	}
+}
+
+.document-links {
+	width: 30%;
+	float: left;
+	box-sizing: border-box;
+	padding: 1em;
+}
+
+.edit_document, .new_document {
+	input, textarea, select {
+		display: block;
+		margin-top: 1em;
+		font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	}
+
+	input[type="text"], textarea {
+		width: 90%;
+		padding: .78571429em 1em;
+	}
+
+	textarea {
+		height: 600px;
+		resize: vertical;
+	}
+
+	select {
+		padding: .78571429em 1em;
+	}
+
+	input[type=submit]{
+
+	}
+
+	textarea.links {
+		width: 300px;
+		height: 100px;
+	}
+}
+
+.document-list {
+	margin: 30px 50px;
+}

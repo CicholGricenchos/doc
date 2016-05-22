@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522065519) do
+ActiveRecord::Schema.define(version: 20160522091221) do
 
   create_table "documents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -19,16 +19,7 @@ ActiveRecord::Schema.define(version: 20160522065519) do
     t.integer  "type"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-  end
-
-  create_table "links", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.boolean  "internal"
-    t.integer  "type"
-    t.integer  "document_id"
-    t.string   "title"
-    t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "links",      limit: 65535
   end
 
 end

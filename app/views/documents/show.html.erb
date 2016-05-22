@@ -1,4 +1,19 @@
-<div>
+<div class="document-content">
+	<%= link_to edit_document_path(@document), class: 'edit-button' do %>
+		<button>Edit</button>
+	<% end %>
+	<h3>Content</h3>
 	<h3><%= @document.title %></h3>
 	<%= @document.gfm_content %>
+</div>
+<div class="document-links">
+	<h3>Links</h3>
+	<% Document::TYPES.each do |id, name| %>
+		<h4><%= name %></h4>
+		<ul>
+			<% split_links(@document.links[id.to_s]).each do |link| %>
+				<li><%= link_to link.title, link.url, target: '_blank' %></li>
+			<% end %>
+		</ul>
+	<% end %>
 </div>

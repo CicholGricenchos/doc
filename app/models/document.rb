@@ -1,5 +1,8 @@
 class Document < ApplicationRecord
   self.inheritance_column = nil
+  serialize :links, JSON
+
+  after_initialize :set_default_links
 
   TYPES = {
     1 => '需求',
@@ -13,6 +16,10 @@ class Document < ApplicationRecord
 
   def gfm_content
     GitHub::Markdown.render_gfm(content).html_safe
+  end
+
+  def set_default_links
+    self.links ||= {}
   end
 
 end

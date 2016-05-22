@@ -1,0 +1,10 @@
+<div class="document-list">
+	<%= link_to "New Document", new_document_path, target: '_blank' %>
+	<br>
+	<% @groups.each do |name, documents| %>
+		<h4><%= name %></h4>
+		<% documents.each do |d| %>
+			<li><%= link_to d.title, document_path(d), target: '_blank' %></li>
+		<% end %>
+	<% end %>
+</div>
