@@ -15,7 +15,7 @@ class Document < ApplicationRecord
   end
 
   def gfm_content
-    GitHub::Markdown.render_gfm(content).html_safe
+    GitHub::Markdown.render(content).html_safe
   end
 
   def set_default_links

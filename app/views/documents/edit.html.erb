@@ -1,6 +1,5 @@
 <%= form_for @document do |f| %>
 	<div class="document-content">
-		<h3>Content</h3>
 		<%= f.text_field :title %>
 		<%= f.select :type, Document::TYPES.invert %>
 		<%= f.text_area :content %>

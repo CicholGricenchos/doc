@@ -2,9 +2,8 @@
 	<%= link_to edit_document_path(@document), class: 'edit-button' do %>
 		<button>Edit</button>
 	<% end %>
-	<h3>Content</h3>
 	<h3><%= @document.title %></h3>
-	<%= @document.gfm_content %>
+	<div class="markdown-body"><%= @document.gfm_content %></div>
 </div>
 <div class="document-links">
 	<h3>Links</h3>

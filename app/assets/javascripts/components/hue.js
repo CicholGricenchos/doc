@@ -2,7 +2,7 @@ var {sin, cos, PI} = Math
 
 class Hue {
 	static generateTuple(x){
-		return [sin(x), sin(x + 2*PI/3), sin(x + 4*PI/3)]
+		return [cos(x), cos(x + 2*PI/3), cos(x + 4*PI/3)]
 	}
 
 	static mapDomain([x1, x2], [y1, y2], a){
@@ -10,7 +10,7 @@ class Hue {
 		return ratio * (y2 - y1)
 	}
 
-	static decToString(dec, a = 0.3){
+	static decToString(dec, a = 0.25){
 		var [r, g, b] = dec.map(e => parseInt(e))
 		return `rgba(${r}, ${g}, ${b}, ${a})`
 	}
@@ -44,4 +44,4 @@ class Hue {
 }
 
 Hue.colors = []
-Hue.hueDivideInto = 18
+Hue.hueDivideInto = 16
